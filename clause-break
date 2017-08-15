@@ -12,7 +12,7 @@ dashes = /
 /x
 
 misc = /
-[,;:?!]\ 
+[\.,?!]"\ |[,;:?!]\ 
 /x
 
 # substitue clause delimiters with newlines
@@ -21,5 +21,8 @@ x = x.gsub(/(#{periods}|#{dashes}|#{misc})/, '\1' + "\n")
 
 # this minimizes the addition of extra empty lines in the output
 x = x.gsub(/^\n^\n|\n\n\z/, "\n")
+
+# strip trailing spaces
+x = x.gsub(/ +$/,"")
 
 print x
