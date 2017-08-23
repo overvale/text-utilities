@@ -1,1 +1,3 @@
-cut -f2-
+# Remove first 4 spaces, or tab, from lines
+
+awk '{gsub(/^( {4}|\t)/, ""); print;}'
