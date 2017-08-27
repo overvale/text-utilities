@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+
+ARGF.set_encoding(Encoding::UTF_8)
+x = ARGF.read
+
+x = x.gsub(/(?!^) *\n(?=\S)/, ' ')
+
+print x
