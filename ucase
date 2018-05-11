@@ -1,3 +1,3 @@
 #!/usr/bin/awk -f
 
-{print toupper($0)}
+{printf toupper($0)}

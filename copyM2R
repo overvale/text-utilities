@@ -1,0 +1,1 @@
+pandoc -s --from markdown --to rtf | pbcopy -Prefer rtf
