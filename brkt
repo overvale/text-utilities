@@ -47,11 +47,11 @@ TODO
 ARGF.set_encoding(Encoding::UTF_8)
 input = ARGF.read
 
-# Remove comments
-input = input.gsub(/(?<!\\){(comment)[ \t]+(.+?)(?<!\\)}/, '<!-- \2 -->')
+# Comments
+input = input.gsub(/(?<!\\){(comment|§|!)[ \t]+(.+?)(?<!\\)}/, '<!-- \2 -->')
 
-# Start with multi-line divs
-input = input.gsub(/(?<!\\){{(\w+)((\S|\s)+?)(?<!\\)}}/, '<div class="\1">\2</div>')
+# Comment out lines starting with #
+input = input.gsub(/(?<!\\)#+:[ \t]+(.+)/, '<!-- \2 -->')
 
 # Break divs
 input = input.gsub(/^\s*{break}\s*$/, "\n<div class=\"break\"></div>\n")
@@ -59,10 +59,10 @@ input = input.gsub(/^\s*{break}\s*$/, "\n<div class=\"break\"></div>\n")
 # Code markup
 input = input.gsub(/(?<!\\){(code)[ \t]+(.+?)(?<!\\)}/, '<code>\2</code>')
 
-# Then inline spans
+# Inline spans
 input = input.gsub(/(?<!\\){(\w+)[ \t]+(.+?)(?<!\\)}/, '<span class="\1">\2</span>')
 
-# And remove escaping backslashes
+# Remove escaping backslashes
 input = input.gsub(/\\([{}])/, '\1')
 
 # Finally, print it all
