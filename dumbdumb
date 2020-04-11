@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Convert smart quotes to dumb
+
 ARGF.set_encoding(Encoding::UTF_8)
 x = ARGF.read
 

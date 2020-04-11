@@ -9,25 +9,10 @@ MARKUP - SPANS
       INPUT: Her favorite book is {book_title Double Cross}.
      OUTPUT: Her favorite book is <span class="book_title">Double Cross</span>.
 
-MARKUP - DIVS
-
-      INPUT: {{sidebar
-             This is sidebar text.
-             }}
-
-     OUTPUT: <div class="sidebar">
-             This is sidebar text.
-             </div>
-
 MARKUP - COMMENTS
 
       INPUT: It was the heaviest rain in decades. {comment need citation}
      OUTPUT: It was the heaviest rain in decades.
-
-MARKUP - IMAGES *** NOT DONE YET ***
-
-      INPUT: ./imgs/cat_dog.png
-     OUTPUT: <img src="img/cat_dog.jpg" />
 
 ESCAPING
 
@@ -48,6 +33,12 @@ WARNINGS
 
 BRKT is not designed to handle nested divs or spans.
 But spans inside divs should work fine.
+
+TODO
+
+	IMAGES
+	INPUT: ./imgs/cat_dog.jpg
+	OUTPUT: <img src="img/cat_dog.jpg" />
 
 ------------------------------------------------------------
 =end

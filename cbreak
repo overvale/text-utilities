@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Breaks lines at clause delimiters
+
 ARGF.set_encoding(Encoding::UTF_8)
 x = ARGF.read
 

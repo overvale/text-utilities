@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# Surrounds the input with matching characters
+
 if test -z $1; then
     echo "ERROR: requires argument 1 to be surround character" >&2
     exit 1

@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Transposes words on either side of a seperator
+
 punc=/[\\\/\|\-,+<>~=:;«»‹›–—]+/
 conj=/and|or/
 
